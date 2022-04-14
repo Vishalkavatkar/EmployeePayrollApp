@@ -9,7 +9,7 @@
        background-color:#ffffff;
     }
 
-    .header-content {
+    .header-content { 
        display: flex;
        flex-direction: row;
        justify-content: center;
