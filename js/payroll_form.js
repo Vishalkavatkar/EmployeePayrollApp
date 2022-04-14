@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       catch (e) {
         nameError.textContent = e;
       }
-    });
+    }); 
    
     const salary = document.querySelector('#salary');
     const output = document.querySelector('.salary-output');

@@ -12,7 +12,7 @@ const getEmployeePayrollDataFromStorage = () => {
 }
 
 const createInnerHtml = () => {
-
+ 
   const headerHtml = `
     <th></th>
     <th>Name</th>

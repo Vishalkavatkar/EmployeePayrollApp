@@ -11,7 +11,7 @@ class EmployeePayrollData {
     get name() {
         return this._name;
     }
-
+ 
     set name(name) { 
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
         if (nameRegex.test(name))
