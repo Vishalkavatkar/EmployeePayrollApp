@@ -70,3 +70,11 @@ const remove = (node) => {
   document.querySelector(".emp-count").textContent = empPayrollList.length;
   createInnerHtml();
 }
+
+let empPayrollList;
+window.addEventListener('DOMContentLoaded', (event) => {
+  empPayrollList = getEmployeePayrollDataFromStorage();
+  document.querySelector(".empCount").textContent = empPayrollList.length;
+  createInnerHtml();
+  localStorage.removeItem('editEmp');
+});
