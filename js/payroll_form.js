@@ -134,3 +134,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const element = document.querySelector(id);
     element.value = value;
   }
+
+  let isUpdate = false;
+  let empPayrollObj = {};
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const name = document.querySelector('#name');
+    name.addEventListener('input', function() {...
+
+    const salary = document.querySelector('#salary');
+    salary.addEventListener('input', function() {...
+
+    checkForUpdate();
+      
+    }
+
+  });
