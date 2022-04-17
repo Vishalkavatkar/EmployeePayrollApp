@@ -2,31 +2,59 @@ window.addEventListener('DOMContentLoaded', (event) => {
   createInnerHtml();
 });
 const createInnerHtml = () => {
-  const headerHtml = `
-    <th></th>
-    <th>Name</th>
-    <th>Gender</th> 
-    <th>Department</th>
-    <th>Salary</th>
-    <th>Start Date</th>
-    <th>Actions</th>;
-
+  const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>"+
+                      "<th>Salary</th><th>Start Date</th><th>Actions</th>";
+  let innerHtml = ${headerHtml}
   let empPayrollData = createEmployeePayrollJSON()[0];
-  const innerHtml = ${headerHtml}
-      <tr>
-        <td><img class="profile" src="../asset/profile-images/Ellipse -2.png">
-        <td>Vishal Kavatkar</td>
-        <td>Male</td>
-        <td><div class='dept-lable'>HR</div>
-            <div class='dept-lable'>Finance</div></td>
-        <td>3000000</td>
-        <td>01 NOV 2020</td>
-        <td>
-          <img name="1" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg">
-          <img name="1" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
-        </td>
-      </tr>`;
-
+  for (const empPayrollData of empPayrollList) {
+    innerHtml = '${innerHtml}'
   }
+  
+      <tr>
+        <td><img class="profile" src="${empPayrollData._profilePic}" alt=""></td>>
+        <td>${empPayrollData._name}</td>
+        <td>${empPayrollData._gender}</td>
+        <td>${getDeptHtml(empPayrollData._department)}</td>
+        <td>${empPayrollData._salary}</td>
+        <td>${empPayrollData._startDate}</td>
+        <td>
+          <img name="${empPayrollData._id}" onclick="remove(this)"
+               src="../assets/icons/delete-black-18dp.svg" alt="delete">
+          <img name="${empPayrollData._id}" onclick="update(this)"
+               src="../assets/icons/delete-black-18dp.svg" alt="edit">
+        </td>
+      </tr>
+   ;
   document.querySelector('#table-display').innerHTML = innerHtml;
+}
+
+const createEmployeePayrollJSON = {} => {
+  let empPayrollListLocal = {
+    _name: 'Vishal Kavatkar',
+    _gender: 'male',
+    _department: [
+      'Engineering'
+      'HR'
+    ],
+    _salary: '500000',
+    _startDate: '29 Oct 2020',
+    _notes: '',
+    _id: new Date().getTime(),
+    _profilePic: '../asset/profile_images/Ellipse -2.png'
+  }
+  {
+    _name: 'Prasad Juvekar',
+    _gender: 'male',
+    _department: [
+      'Engineering'
+      'HR'
+    ],
+    _salary: '200000',
+    _startDate: '20 Oct 2020',
+    _notes: '',
+    _id: new Date().getTime(),
+    _profilePic: '../asset/profile_images/Ellipse -1.png'
+  }
+];
+return empPayrollListLocal;
 }
